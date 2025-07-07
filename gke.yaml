@@ -13,10 +13,7 @@ spec:
         app: gcp
     spec:
       containers:
-        - name: gcp-devops-gke
-          image: gcr.io/kodekloud-gcp-training/test-gcpdevops:latest
+        - name: nginx
+          image: nginx:stable
           ports:
-            - containerPort: 5000
-          env:
-            - name: PORT
-              value: "5000"
+            - containerPort: 80
