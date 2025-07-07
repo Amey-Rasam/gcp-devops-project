@@ -3,7 +3,7 @@ options:
 steps:
 #build the container image
 - name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/SPROJECT_ID/gcpdevops", "."
+  args: ["build", "-t", "gcr.io/SPROJECT_ID/gcpdevops", "."]
 #push container image
 - name: "gcr.io/cloud-builders/docker"
   args: ["push", "gcr.io/SPROJECT_ID/gcpdevops"]
