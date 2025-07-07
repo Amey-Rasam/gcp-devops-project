@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gcp-devops-gke
-          image: gcr.io/kodekloud-gcp-training/test-gcpdevops:latest
+          image: IMAGE_PLACEHOLDER  # gke-deploy will replace this
           ports:
             - containerPort: 5000
           env:
