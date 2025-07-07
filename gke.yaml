@@ -5,18 +5,18 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: gcp
+  matchLabels:
+    app: gcp
   template:
     metadata:
       labels:
         app: gcp
     spec:
       containers:
-        - name: gcp-devops-gke
-          image: IMAGE_PLACEHOLDER  # gke-deploy will replace this
-          ports:
-            - containerPort: 5000
-          env:
-            - name: PORT
-              value: "5000"
+      - name: gcp-devops-gke
+        image: gcr.io/kodekloud-gcp-training/test-gcpdevops: latest
+        ports:
+      - containerPort: 5000
+      env:
+        - name: PORT
+          value: "5000"
