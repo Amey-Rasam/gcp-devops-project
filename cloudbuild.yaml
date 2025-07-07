@@ -7,6 +7,6 @@ steps:
   args:
     - run
     - --filename=gke.yaml
-    - --cluster=gcp-devops-cluster       # 🔁 Replace with your cluster name
+    - --cluster=gcp-devops-project       # 🔁 Replace with your cluster name
     - --location=us-central1-a           # 🔁 Replace with your cluster zone
     - --namespace=gcp-devops-prod        # 🔁 Replace with your namespace
