@@ -1,18 +1,12 @@
 options:
   logging: CLOUD_LOGGING_ONLY
+
 steps:
-#build the container image
-- name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/$PROJECT_ID/gcpdevops", "."]
-#push container image
-- name: "gcr.io/cloud-builders/docker"
-  args: ["push", "gcr.io/$PROJECT_ID/gcpdevops"]
-#deploy container image to GKE
+# Deploy public nginx image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
     - run
     - --filename=gke.yaml
-    - --image=gcr.io/$PROJECT_ID/gcpdevops
-    - --location=us-central1-a
-    - --cluster=gcp-devops-project
-    - --namespace=gcp-devops-prod
+    - --cluster=gcp-devops-cluster       # 🔁 Replace with your cluster name
+    - --location=us-central1-a           # 🔁 Replace with your cluster zone
+    - --namespace=gcp-devops-prod        # 🔁 Replace with your namespace
